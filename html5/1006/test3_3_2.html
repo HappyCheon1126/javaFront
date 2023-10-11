@@ -1,0 +1,146 @@
+<html>
+<head>
+  <title>Table태그 응용연습3_3_2</title>
+</head>
+<body>
+<table border="1px" width="1000px" align="center" cellpadding="0px" cellspacing="0px">
+  <tr>
+    <td>
+      <table border="1px" background="../../images/title.jpg" width="100%" height="200px" cellpadding="0px" cellspacing="0px">
+        <tr>
+          <td>
+            <table border="0px" width="100%" height="200px">
+              <tr>
+                <td width="700px"></td>
+                <td width="300px" align="center" valign="top">
+                  <a href="test3_3.html">홈으로</a><br/>
+                  <a href="test3_3_3.html">커뮤니티</a><br/>
+                  <a href="test3_3_4.html">사이트맵</a><br/>
+                  <a href="test3_3_2.html">회원가입</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table border="1px" width="100%" height="650px" cellpadding="0px" cellspacing="0px">
+        <tr>
+          <td width="100%" height="650px" align="center">
+            <form name="myform" method="get" action="#">
+              <table border="1" cellpadding="10px" cellspacing="0px">
+                <caption><h2><p align="center">회 원 가 입</p></h2></caption>
+                <!--
+                <tr>
+                  <td colspan="2" align="center">
+                    <h2>회 원 가 입</h2>
+                  </td>
+                </tr>
+                -->
+                <tr>
+                  <th bgcolor="pink"><label for="irum">성명</label></th>
+                  <td><input type="text" name="irum" id="irum" placeholder="이름을 입력하세요" autofocus required /></td>
+                </tr> <!-- 텍스트필드 -->
+                <tr>
+                  <th bgcolor="pink"><label for="age">나이</label></th>
+                  <td><input type="number" name="age" id="age" value="10" min="10" max="99" /></td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center"><label for="nickName">닉네임</label></td>
+                  <td><input type="text" name="nickName" id="nickName" value="홍장군" size="5" required /></td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center"><label for="pwd">비밀번호(8자이내로입력)</label></td>
+                  <td><input type="password" name="pwd" id="pwd" maxlength="8" required /></td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center"><label for="search">검색어</label></td>
+                  <td><input type="search" name="search" id="search" placeholder="검색어를 입력하세요" /></td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center"><label for="email">이메일</label></td>
+                  <td><input type="email" name="email" id="email" placeholder="메일주소를 입력하세요" /></td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center">성별</td>
+                  <td>
+                    <input type="radio" name="gender" value="남자" />남자 &nbsp; &nbsp;
+                    <input type="radio" name="gender" value="여자" checked />여자
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center">소지하고 있는 카드는</td>
+                  <td>
+                    <input type="checkbox" name="card" value="LG카드" />LG카드
+                    <input type="checkbox" name="card" value="삼성카드" />삼성카드
+                    <input type="checkbox" name="card" value="농협카드" checked />농협카드
+                    <input type="checkbox" name="card" value="신한카드" />신한카드
+                    <input type="checkbox" name="card" value="BC카드" />BC카드
+                    <input type="checkbox" name="card" value="비자카드" />비자카드
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center">직업</td>
+                  <td>
+                    <select name="job">
+                      <option value="">직업을 선택</option>
+                      <option value="s" selected>학생</option>
+                      <option value="o">회사원</option>
+                      <option value="g">공무원</option>
+                      <option value="a">의사</option>
+                      <option value="z">기타</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center">즐겨먹는음식</td>
+                  <td>
+                    <select name="foot" size="5" multiple>
+                      <option>음료수</option>
+                      <option selected>짜장면</option>
+                      <option>찐빵</option>
+                      <option>떡볶이</option>
+                      <option>만두</option>
+                      <option>바나나</option>
+                      <option>과자</option>
+                      <option>아이스크림</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center">자기소개</td>
+                  <td><textarea rows="5" cols="50" name="content"></textarea></td>
+                </tr>
+                <tr>
+                  <td bgcolor="pink" align="center">첨부파일</td>
+                  <td><input type="file" name="fname" /></td>
+                </tr>
+                <tr>
+                  <td colspan="2" align="center" bgcolor="skyblue">
+                    <!--
+                    <button type="submit">전송하기</button>
+                    <button tepe="reset">다시입력</button>
+                    <button tepe="button">돌아가기</button>
+                    -->
+                    <input type="submit" value="전송하기"/> &nbsp;
+                    <input type="reset" value="다시입력"/> &nbsp;
+                    <input type="button" value="돌아가기"/>
+                  </td>
+                </tr>
+              </table>
+              <input type="hidden" name="idx" value="1234"/>
+            </form>
+          </td>
+        </tr>
+      </table>
+      <table border="1px" width="100%" height="150px" bgcolor="brown" cellpadding="0px" cellspacing="0px">
+        <tr>
+          <td>
+            <p align="center"><font color="white">Copyright : 2023. 10. 06. Design By Happy Cheon</font></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

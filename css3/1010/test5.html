@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html</title>
+  <style>
+    * {   /* 전체 선택자 */
+      font-family: "굼서","돋움";
+      font-size: 10pt;
+    }
+
+    /*
+    body {
+      font-size: 10pt;
+    }
+     */
+    p {   /* 태그 선택자 */
+      font-size: 12pt;
+    }
+    #mbc {   /* 아이디 선택자 */
+      color: red;
+    }
+    .mbc {   /* 클래스 선택자 */
+      color: yellow;
+    }
+    p.mbc {   /* 혼합 선택자 */
+      color: orange;
+    }
+    .seoul {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>스파일 혼용 사용예제</h2>
+  <p>1.안녕하세요</p>
+  <p id="mbc">2.안녕하세요</p>
+  <p>3.안녕하세요</p>
+  <p class="seoul">4.안녕하세요</p>
+  <p>5.안녕하세요</p>
+  <p class="seoul">6.안녕하세요</p>
+  <p>7.안녕하세요</p>
+  <p class="seoul">8.안녕하세요</p>
+  <p>9.안녕하세요</p>
+  <p class="mbc">10.안녕하세요</p>
+  <h3 class="mbc">11.안녕하세요</h3>
+</body>
+</html>

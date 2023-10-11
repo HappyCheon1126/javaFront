@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test9.html</title>
+  <style>
+    * {
+      line-height: 20pt;
+    }
+    .c1 {
+      background-color: orange;
+    }
+    ol ul ol {   /* 자손 선택자(공백으로 분리) */
+      background-color: pink;
+    }
+
+    #i1 > li {  /* 자식 선택자(>로 분리) */
+      background-color: green;
+    }
+
+    ol > ol > ul > ul > li {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS 연습</h2>
+  <h3>길동이가 좋아하는 음식 Best 5</h3>
+  <ol>
+    <li>짜장면</li>
+    <li>찐빵</li>
+    <li>과일</li>
+    <ul>
+      <li class="c1">사과</li>
+      <li class="c1">배</li>
+      <li class="c1">바나나</li>
+    </ul>
+    <li>과자</li>
+    <ul>
+      <li>새우깡</li>
+      <ol>
+        <li>일반새우깡</li>
+        <li>블랙새우깡</li>
+        <li>레드새우깡</li>
+      </ol>
+      <li>꿀꽈배기</li>
+      <li>맛동산</li>
+    </ul>
+    <li>피자</li>
+    <ol id="i1">
+      <li>콤비네이션피자</li>
+      <li>불고기피자</li>
+      <li>치즈피자</li>
+      <ul>
+        <li>일반치즈피자</li>
+        <li>치즈클러스터피자</li>
+        <ul>
+          <li>레귤러피자</li>
+          <li>라지피자</li>
+          <li>엑스라지피자</li>
+        </ul>
+      </ul>
+    </ol>
+  </ol>
+</body>
+</html>

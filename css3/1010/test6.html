@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test6.html</title>
+  <style>
+    * {
+      line-height: 20pt;  /* 줄간격 : 20pt */
+    }
+
+    #i1 {
+      font-size: 20pt;
+    }
+
+    .c1 {
+      font-size: 15pt;
+    }
+    
+    .c2 {
+      color: red;
+    }
+    
+    div.c2 {
+      color: yellow;
+    }
+    
+    .c3 {
+      background-color: aqua;
+    }
+    .c4 {
+      background-color: orange;
+    }
+
+    .c5 {
+      font-weight: bolder;
+    }
+  </style>
+</head>
+<body>
+  <h2>div태그/span태그</h2>
+  <p>1.<span class="c2">안녕</span>하세요</p>
+  <p>2.<span>안녕</span>하세요</p>
+  <hr/>
+  <div>1.<span class="c2">안녕</span>하세요</div>
+  <div id="i1">2.<span class="c5">안녕</span>하세요</div>
+  <div>3.<div class="c2">안녕</div>하세요</div>
+  <div class="c1">4.<span>안녕</span>하세요</div>
+  <div>5.<span>안녕</span>하세요</div>
+  <div class="c1">6.<span>안녕</span>하세요</div>
+  <div>7.<span>안녕</span>하세요</div>
+  <div class="c1">8.<span>안녕</span>하세요</div>
+  <div class="c4">9.<span id="i1" class="c3">안녕</span>하세요</div>
+  <div>10.<span class="c3 c5">안녕</span>하세요</div>
+</body>
+</html>

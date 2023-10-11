@@ -1,0 +1,110 @@
+<html>
+<head>
+  <title>test6_form.html(폼태그연습)</title>
+</head>
+<body>
+  <h2>폼태그 연습</h2>
+  <hr/>
+  <h2>회 원 가 입</h2>
+  <form name="myform" method="post" action="서버에서받을파일명.jsp">
+    <p><label for="irum">성명</label> : <input type="text" name="irum" id="irum" placeholder="이름을 입력하세요" autofocus /></p> <!-- 텍스트필드 -->
+    <p><label for="age">나이</label> : <input type="number" name="age" id="age" value="10" min="10" max="99" /></p>
+    <p><label for="nickName">닉네임</label> : <input type="text" name="nickName" id="nickName" value="홍장군" size="5" /></p>
+    <p><label for="pwd">비밀번호(8자이내로입력)</label> : <input type="password" name="pwd" id="pwd" maxlength="8" /></p>
+    <p><label for="search">검색어</label> : <input type="search" name="search" id="search" placeholder="검색어를 입력하세요" />
+    <p><label for="email">이메일</label> : <input type="email" name="email" id="email" placeholder="메일주소를 입력하세요" />
+    <p>성별 : 
+      <input type="radio" name="gender" value="남자" />남자
+      <input type="radio" name="gender" value="여자" checked />여자
+    </p>
+    <p>소지하고 있는 카드는 :
+      <input type="checkbox" name="card" value="LG카드" />LG카드
+      <input type="checkbox" name="card" value="삼성카드" />삼성카드
+      <input type="checkbox" name="card" value="농협카드" />농협카드
+      <input type="checkbox" name="card" value="신한카드" />신한카드
+      <input type="checkbox" name="card" value="BC카드" />BC카드
+      <input type="checkbox" name="card" value="비자카드" />비자카드
+    </p>
+    <p>직업 :
+      <select name="job">
+        <option value="">직업을 선택</option>
+        <option value="s">학생</option>
+        <option value="o">회사원</option>
+        <option value="g">공무원</option>
+        <option value="a">의사</option>
+        <option value="z">기타</option>
+      </select>
+    </p>
+    <p>즐겨먹는음식 :
+      <select name="foot" size="5" multiple>
+        <option>음료수</option>
+        <option>짜장면</option>
+        <option>찐빵</option>
+        <option>떡볶이</option>
+        <option>만두</option>
+        <option>바나나</option>
+        <option>과자</option>
+        <option>아이스크림</option>
+      </select>
+    </p>
+    <p>자기소개 : 
+      <textarea rows="5" cols="50" name="content"></textarea>
+    </p>
+    <p>첨부파일 :
+      <input type="file" name="fname" />
+    </p>
+    <input type="hidden" name="idx" value="1234"/>
+    <hr/>
+    <p>
+      주문수량 : 
+      <input type="number" name="su" min="5" max="20" step="5" />
+    </p>
+    <p>주문수량2 :
+      <input type="range" name="su2" min="1" max="10" value="1" />개
+    </p>
+    <p>
+      작업 진행 상태 :
+      <progress value="30" max="100"></progress>
+    </p>
+    <p>
+      사용량(트래픽수) :
+      <meter value="900" low="200" high="800" min="100" max="1000"></meter>
+    </p>
+    <p>
+      그린대학교 학과목록
+      <select name="kwa" id="kwa">
+        <optgroup label="공과대학">
+          <option>기계공학과</option>
+          <option>전기공학과</option>
+          <option>전자공학과</option>
+          <option>컴퓨터공학과</option>
+          <option>토목공학과</option>
+        </optgroup>
+        <optgroup label="인문대학">
+          <option>어문학부</option>
+          <option>철학과</option>
+          <option>경상학부</option>
+          <option>행정학부</option>
+          <option>기타학부</option>
+        </optgroup>
+      </select>
+    </p>
+    <p>
+      대학명 :
+      <input type="text" name="uni" value="그린대학교" readonly />
+    </p>
+    <p>학과입력
+      <input type="text" name="hak" id="hak" required list="choices">
+      <datalist id="choices">
+        <option>토목공학과</option>
+        <option>기계공학과</option>
+        <option>영문학과</option>
+        <option>물리학과</option>
+        <option>철학과</option>
+        <option>수학과</option>
+      </datalist>
+    </p>
+  </form>
+  <br/><br/><br/><br/>
+</body>
+</html>

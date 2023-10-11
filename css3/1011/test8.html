@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test8.html</title>
+  <style>
+    .dd {
+      background-color: rgb(255, 21, 0);
+      font-size: 20pt;
+    }
+    table {
+      width: 400px;
+      /* height: 300px; */
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid gray;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+    thead, th {
+      background-color: aqua;
+      color: brown;
+      height: 100px;
+    }
+    tfoot {
+      height: 100px;
+      background-color: brown;
+    }
+    tbody {
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <h2>표 연습</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>1</th>
+        <th class="dd">2</th>
+        <th>3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4</td>
+        <td class="dd">5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="dd">8</td>
+        <td>9</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>10</td>
+        <td class="dd">11</td>
+        <td>12</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
