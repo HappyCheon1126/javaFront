@@ -20,6 +20,14 @@
     #myform2 {
       float: right;
     }
+
+    .btn {
+      padding: 8px;
+      font-size: 14px;
+      background-color: chocolate;
+      color: #fff;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -36,8 +44,12 @@
           <input type="password" name="pwd" id="pwd" />
         </p>
         <p>
+          <!--
           <input type="submit" value="전송" class="btn" />
           <input type="reset" value="다시입력" class="btn" />
+          -->
+          <button type="submit" class="btn">전송</button>
+          <button type="reset" class="btn">다시입력</button>
         </p>
       </fieldset>
     </form>
