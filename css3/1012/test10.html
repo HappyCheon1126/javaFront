@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test10.html</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas: 
+        'header header'
+        'aside  content'
+        'footer footer';
+      grid-template-rows: 150px 1fr 100px;
+      grid-template-columns: 150px 1fr;
+
+      height: 800px;
+    }
+    .item {
+      padding: 50px;
+      color: #fff;
+    }
+    .header {
+      grid-area: header;
+      background-color: rgb(7, 240, 240);
+    }
+    .aside {
+      grid-area: aside;
+      background-color: rgb(108, 7, 240);
+      /* width: 200px; */
+      /* height: 400px; */
+    }
+    .content {
+      grid-area: content;
+      background-color: rgb(26, 240, 7);
+    }
+    .footer {
+      grid-area: footer;
+      background-color: rgb(240, 127, 7);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item header">header</div>
+    <div class="item aside">aside</div>
+    <div class="item content">
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+      <p>content</p>
+    </div>
+    <div class="item footer">footer</div>
+  </div>
+</body>
+</html>

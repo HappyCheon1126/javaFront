@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    /*
+    .container {
+      display: grid;
+
+      grid-template-areas: 
+        'item1 item1 item1'
+        'item2 item2 item3'
+        'item4 item5 item5';
+
+      grid-template-rows: repeat(3, 200px);
+      grid-template-columns: repeat(3, 200px);
+      height: 200px;
+
+      width: 600px;
+      margin: 0 auto;
+    }
+    */
+    .container {
+      display: grid;
+      grid-template-areas: 
+        'item1 item1 item1'
+        'item2 item2 item3'
+        'item4 item5 item5';
+
+      /* grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr); */
+      /* height: 200px; */
+      margin: 0px 100px;
+    }
+
+    .item {
+      text-align: center;
+      line-height: 200px;
+      color: #fff;
+      background-color: pink;
+    }
+    
+    .item1 {
+      grid-area: item1;
+      background-color: pink;
+    }
+    .item2 {
+      grid-area: item2;
+      background-color: green;
+    }
+    .item3 {
+      grid-area: item3;
+      background-color: blue;
+    }
+    .item4 {
+      grid-area: item4;
+      background-color: brown;
+    }
+    .item5 {
+      grid-area: item5;
+      background-color: skyblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+  </div>
+</body>
+</html>

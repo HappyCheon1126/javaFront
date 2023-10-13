@@ -1,0 +1,54 @@
+/* test6.css */
+body {
+  margin: 0px;
+  font-size: 0.8em;
+}
+.container {
+  background-color: bisque;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;  /* 기본(행 기준) */
+
+}
+.item {
+  width: 150px;
+  height: 150px;
+  border: 1px solid gray;
+  text-align: center;
+}
+/* 
+.item:nth-child(1) {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+} */
+
+.item1 {
+  background-color: #4f9a99; 
+  order: 1;
+  /* flex-grow: 3; */
+  /* flex-shrink: 3; */
+  flex-basis: 60%;
+  align-self: center;
+}
+.item2 {
+  background-color: #f09a99; 
+  order: 2;
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
+  flex-basis: 30%;
+}
+.item3 {
+  background-color: #ef0199; 
+  order: 3;
+  flex-basis: 10%;
+  align-self: center;
+}
+.item4 {background-color: #109a69; order: 4;}
+.item5 {background-color: #e19a59; order: 5;}
+.item6 {background-color: #eff04a; order: 6;}
+.item7 {background-color: #ef0af9; order: 7;}
+.item8 {background-color: #ef1a99; order: 8;}
+.item9 {background-color: #3f95a9; order: 9;}
+.item10 {background-color: #ef9a20; order: 10;}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu1.html</title>
+  <style>
+    /* css reset 설정 */
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    nav ul li {
+      list-style: none;
+      padding: 0px;
+    }
+    a {
+      /* text-decoration: none; */
+      text-decoration: inherit;
+    }
+
+    /* 주메뉴 설정작업 */
+    nav {
+      text-align: center;
+    }
+    nav > ul {
+      background-color: aqua;
+      padding: 0px 10px;
+    }
+    
+    nav > ul > li {
+      display: inline-block;
+      /* padding: 10px; */
+      margin: 0px;
+      width: 100px;
+    }
+    nav > ul > li > a {
+      display: inline-block;
+      /* background-color: #514f4f; */
+      padding: 10px;
+      /* color:beige */
+    }
+    nav > ul > li:hover > a {
+      background-color: black;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">주메뉴 1</a></li>
+      <li><a href="#">주메뉴 2</a></li>
+      <li><a href="#">주메뉴 3</a></li>
+      <li><a href="#">주메뉴 4</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

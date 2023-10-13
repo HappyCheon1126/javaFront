@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu4.html</title>
+  <style>
+    /* css reset 설정 */
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    /* nav ul li { */
+    ul, li {
+      list-style: none;
+      padding: 0px;
+    }
+    a {
+      /* text-decoration: none; */
+      text-decoration: inherit;
+      color:white;
+    }
+
+    /* 주메뉴 설정작업 */
+    nav {
+      text-align: center;
+    }
+    nav ul {
+      background-color: #000;
+    }
+    nav > ul {
+      /* background-color: aqua; */
+      padding: 0px 10px;
+    }
+    
+    nav > ul > li {
+      display: inline-block;
+      /* padding: 10px; */
+      margin: 0px;
+      width: 110px;
+    }
+    /* nav > ul > li > a { */
+    nav li > a {
+      /* display: inline-block; */
+      display: block;
+      padding: 10px;
+    }
+    /* nav > ul > li:hover > a { */
+    nav ul li:hover > a {
+      background-color: gray;
+      color: #fff;
+    }
+
+    nav > ul > li {
+      position: relative;
+    }
+
+    /* 서브 메뉴 설정 */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      width: 110px;
+      background-color: #000;
+    }
+    nav ul li:hover > ul {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">주메뉴 1</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴 2</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴 3</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">주메뉴 4</a>
+        <ul>
+          <li><a href="#">서브메뉴1</a></li>
+          <li><a href="#">서브메뉴2</a></li>
+          <li><a href="#">서브메뉴3</a></li>
+          <li><a href="#">서브메뉴4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>
