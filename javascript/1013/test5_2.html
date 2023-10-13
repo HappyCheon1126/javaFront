@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html</title>
+  <script>
+    // 호이스팅(hoisting)
+
+    //'use strict';
+
+    let sbs;
+    const kbs = 100;
+
+    cjb = 200;
+
+    // kbs = 200;
+    console.log("sbs :",sbs);
+    console.log("kbs :",kbs);
+    console.log("cjb :",cjb);
+    console.log("seoul :",seoul);
+    
+    // let sbs;
+    //var sbs;
+    var seoul;
+    
+    function calc() {
+      sbs = mbc + 50;
+      console.log("sbs :",sbs);
+    }
+    
+    var mbc = 100;
+  </script>
+</head>
+<body>
+  <h2>변수의 선언</h2>
+  <input type="button" value="계산" onclick="calc()" />
+</body>
+</html>

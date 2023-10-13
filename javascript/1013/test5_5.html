@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html</title>
+  <script>
+    // 호이스팅(hoisting)
+    // 함수 표현식(익명 함수)
+
+    let mbc = function() {
+      console.log("안녕 함수표현식!!!");
+    }
+
+    // let mbc2 = function(su1, su2) {
+    //   return su1 + su2;
+    // }
+
+    // Arrow Function
+    // const mbc2 = (su1, su2) => {
+    //   let res = su1 + su2;
+    //   return res;
+    // }
+    // const mbc2 = (su1, su2) => {
+    //   return su1 + su2;
+    // }
+    // const mbc2 = (su1, su2) => (su1 + su2);
+    const mbc2 = (su1, su2) => su1 + su2;
+    
+    console.log("mbc : ", mbc);
+    console.log("mbc2 : ", mbc2(10,20));
+
+    function calc(su1, su2) {
+      console.log(su1 + su2);
+    }
+  </script>
+</head>
+<body>
+  <h2>변수의 선언</h2>
+  <input type="button" value="계산" onclick="calc(50,200)" />
+</body>
+</html>

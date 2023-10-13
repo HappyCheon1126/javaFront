@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html</title>
+  <script>
+    // 호이스팅(hoisting)
+
+    //'use strict';
+
+    var atom = 100;
+    let atom2 = 50;
+
+    function calc() {
+      let sbs = atom + 50;
+      console.log("sbs :",sbs); // sbs의 값이 NaN으로 출력
+
+      var atom = 500;
+    }
+
+    function calc2() {
+      let sbs = atom2 + 50;
+      console.log("sbs :",sbs);
+      
+      //let atom2 = 500;
+      console.log("sbs :",sbs);
+    }
+    
+    console.log("atom : ", atom);
+    console.log("atom2 : ", atom2);
+  </script>
+</head>
+<body>
+  <h2>변수의 선언</h2>
+  <input type="button" value="계산" onclick="calc()" />
+  <input type="button" value="계산2" onclick="calc2()" />
+</body>
+</html>

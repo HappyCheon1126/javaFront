@@ -1,0 +1,71 @@
+<!-- 두수와 연산자를 입력받아서 그 결과를 출력하시오.
+  연산자는 라디오 버튼으로 처리하시오.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test4_8.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <script>
+    'use strict';
+
+    // 사칙연산 처리
+    function calc() {
+      let su1 = document.getElementById("ss1").value;
+      let su2 = document.getElementById("ss2").value;
+      //let op = document.getElementById("op").value;
+      let op = document.myform.op.value;
+      let hap = eval(su1 + op + su2);
+
+      document.getElementById("res").value = hap;
+
+      alert("결과 : " + hap);
+      let yn = confirm("작업을 계속하시겠습니까?");
+      if(yn) {
+        location.reload();
+        //document.getElementById("ss1").focus();
+        //document.myform.ss1.focus();
+      }
+    }
+
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>폼태그와 자바스크립트</h2>
+  <form name="myform">
+    <p>
+      <div class="form-group mt-5">
+        <label for="su1">첫번째수</label>
+        <input type="text" id="ss1" value="0" class="form-control" autofocus />
+      </div>
+      <div class="form-group mt-2">
+        <label for="su1">연산자</label> &nbsp;&nbsp;
+        <input type="radio" name="op" id="op" value="+" checked>더하기 &nbsp;
+        <input type="radio" name="op" id="op" value="-">빼기 &nbsp;
+        <input type="radio" name="op" id="op" value="*">곱하기 &nbsp;
+        <input type="radio" name="op" id="op" value="/">나누기
+      </div>
+      <div class="form-group mt-2">
+        <label for="su2">두번째수</label>
+        <input type="number" id="ss2" value="0" class="form-control"/>
+      </div>
+      <div>
+        <input type="button" value="계산하기" onclick="calc()" class="btn btn-success form-control mb-1"/>
+      </div>
+    </p>
+    <hr/>
+    결과
+    <input type="text" name="res" id="res" readonly class="form-control" />
+  </form>
+</div>
+</body>
+</html>
