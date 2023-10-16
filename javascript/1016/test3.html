@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    'use strict';
+
+    function forCheck() {
+      // let su = document.myform.su.value;
+      let su = myform.su.value;
+
+      //console.log("su",isNaN(su));
+
+      if(su.trim() == "") {
+        alert("수행할 숫자를 입력하세요");
+        document.myform.su.focus();
+        return;
+      }
+      else if(isNaN(su)) {
+        alert("숫자만 입력하셔야 합니다.");
+        document.myform.su.focus();
+        return;
+      }
+
+      let str = "";
+      for(let i=0; i<su; i++) {
+        str += `번호 ${i} 안녕~~~<br/>`;
+      }
+      demo.innerHTML = str;
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <form name="myform" method="get" action="#">
+    <h2>For 반복문 연습</h2>
+    <p>반복할 횟수를 입력하세요?
+      <!-- <input type="number" name="su" id="su" class="form-control" autofocus /> -->
+      <input type="text" name="su" id="su" class="form-control" autofocus />
+    </p>
+    <p>
+      <input type="button" value="for문연습" onclick="forCheck()" class="btn btn-primary"/>
+      <!-- <input type="button" value="다시하기" onclick="javascript:location.reload();" class="btn btn-warning"/> -->
+      <input type="button" value="다시하기" onclick="location.reload()" class="btn btn-warning"/>
+    </p>
+    <br/>
+    <div id="demo"></div>
+  </form>
+</div>
+</body>
+</html>

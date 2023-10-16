@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test10.html</title>
+  <script>
+    'use strict';
+
+    const temp = [10,'a','A',"abc",true,3.14];
+
+    console.log("temp :", temp);
+    //for(let t in temp) {    // 인덱스 번호를 추출
+    for(let t of temp) {      // 값을 추출
+      console.log(t);
+    }
+    console.clear();
+                //0123456
+    const bigo = "seoul";
+    console.log("bogo.length : ", bigo.length);
+    for(let i=0; i<bigo.length; i++) {
+      console.log(bigo.charAt(i));
+    }
+
+    console.clear();
+    console.log(bigo.substring(1,4));
+    console.log(bigo.substring(bigo.length-1));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

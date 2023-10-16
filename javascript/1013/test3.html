@@ -12,10 +12,12 @@
 
   <script src="test.js"></script>
   <script>
+    // 경고창(메세지 띄우기) : alert()
     function msg1() {
       alert("안녕!!!");
     }
 
+    // 메세지와 동시에 내용을 입력받기(prompt())
     function msg2() {
       name = prompt("성명을 입력하세요");
       alert("입력된 성명은? " + name);
@@ -32,6 +34,16 @@
       }
     }
 
+    // 메세지창을 통해서 진행여부 결정하기(confirm())
+    function ynCheck2() {
+      yn = confirm("작업을 계속하시겠습니까?");
+      if(yn) {
+        alert("작업을 계속 진행합니다.");
+      }
+      else {
+        alert("작업을 마칩니다.");
+      }
+    }
     
   </script>
 
@@ -45,6 +57,7 @@
     <button type="button" onclick="msg2()" class="btn btn-primary">메세지2</button>
     <button type="button" onclick="ageCheck()" class="btn btn-warning">나이체크</button>
     <button type="button" onclick="ynCheck()" class="btn btn-secondary">확인체크</button>
+    <button type="button" onclick="ynCheck2()" class="btn btn-info">확인체크2</button>
   </form>
 </div>
 </body>
