@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2_뒷문자차례로지우기.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    'use strict';
+    
+    function backClear() {
+      let str = document.getElementById("str").value.trim();
+
+      if(str == "") {
+        alert("문자열을 입력하세요");
+      }
+      else {
+        str = str.substring(0, str.length - 1);
+        document.getElementById("str").value = str;
+      }
+      //document.getElementById("str").focus();
+      myform.str.focus();
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>텍스트 박스에 입력된 글자를 뒤에서부터 1글자씩 모두 지우시오.</h2>
+  <p>모든 글자가 지워지면 메세지를 화면출력하고 다시 입력후 작업하시오.</p>
+  <hr/>
+  <form name="myform">
+    <div>문자입력
+      <input type="text" name="str" id="str" value="seoul" autofocus class="form-control mb-2"/>
+      <input type="button" value="BackSpace" onclick="backClear()" class="btn-success form-control"/>
+    </div>
+  </form>
+</div>
+</body>
+</html>

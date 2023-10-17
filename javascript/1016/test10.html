@@ -10,7 +10,10 @@
     const temp = [10,'a','A',"abc",true,3.14];
 
     console.log("temp :", temp);
-    //for(let t in temp) {    // 인덱스 번호를 추출
+    for(let t in temp) {    // 배열에서는 인덱스 번호를 추출
+      console.log(t);
+    }
+    console.log();
     for(let t of temp) {      // 값을 추출
       console.log(t);
     }
