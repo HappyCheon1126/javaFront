@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5_다형성.html</title>
+  <script>
+    'use strict';
+
+    class Shape {
+      constructor(width, height) {
+        this.width = width;
+        this.height = height;
+      }
+
+      // 사각형의 면적
+      getArea() {
+        return this.width * this.height;
+      }
+    }
+
+    let shape = new Shape(10, 20);
+    console.log("shape :", shape);
+    console.log("shape.getArea() :", shape.getArea());
+
+    class ChildShape1 extends Shape {}
+    
+    // 자식객체(ChildShape1)를 통해서 사각형의 면적을 구해보자.
+    let childShape1 = new ChildShape1(50, 60);
+    console.log("childShape1를 통한 면적 :", childShape1.getArea());
+    
+    class ChildShape2 extends Shape {
+      getArea() {
+        return this.width * this.height + 100;
+      }
+    }
+
+    let childShape2 = new ChildShape2(50, 60);
+    console.log("childShape2를 통한 면적 :", childShape2.getArea());
+  </script>
+</head>
+<body>
+  <h2>다형성 연습</h2>
+</body>
+</html>

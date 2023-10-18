@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2_객체.html</title>
+  <script>
+    'use strict';
+
+    // 객체 생성 : new 연산자
+    let obj = new Object();
+    obj.name = '홍길동';
+    obj.age = 25;
+    obj.jumsu = [100,90,80];
+    obj.myFunc = function() {
+      console.log('성명', this.name);
+    };
+    obj.myObj = {
+      tel : "010-1234-5678",
+      address : '청주시 흥덕구 사창동'
+    };
+
+    console.log('obj객체:', obj);
+  </script>
+</head>
+<body>
+  <h2>객체(클래스) 연습</h2>
+</body>
+</html>

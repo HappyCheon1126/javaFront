@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <title>계산기.html</title>
+  <style>
+    table {
+      border: 0px;
+      margin: 0px auto;
+    }
+    button {
+      width: 100%;
+    }
+  </style>
+  <script>
+    'use strict';
+
+    // 누른것을 입력해주는 함수
+    function add(char) {
+      // display변수에 id가 display인 input태그를 담는다.
+      let display = document.getElementById('display');
+
+      // input태그에 현재 눌러진 문자를 추가해준다. (계산식이 바로 눈에 보이게)
+      display.value += char;
+    }
+
+    // 계산함수
+    function calc(){
+      //  eval() : java스크립트 내장함수. 식을 입력하면 계산해준다. 
+      let result = eval(document.getElementById('display').value);
+
+      // 결과값이 정수이면 쉼표로 처리하기
+      if(Number.isInteger(result)) result = comma(result);
+
+      // 계산된 값 결과 태그에 넣기
+      // document.getElementById('display').value = result;
+      document.getElementById('result').value = result;
+    }
+
+    // AC버튼(리셋)
+    function reset(){
+      document.getElementById('display').value = "";
+      document.getElementById('result').value = "";
+    }
+
+    // 쉼표처리
+    function comma(num) {
+      num = String(num);
+      let numLen = num.length;
+      let numPoint = numLen % 3;
+      
+      let numStr = '';
+      numStr = num.substring(0, numPoint)
+
+      while(numPoint < numLen) {
+        if(numStr != "") numStr += ",";     // 1,234,
+        numStr += num.substring(numPoint, numPoint+3);  // 1,234,567
+        numPoint += 3;    // 4
+      }
+      return numStr;
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2 class="text-center">계산기</h2>
+  <table>
+    <tr>
+      <td colspan="4">      <!-- 계산식 창-->
+        <input type="text" name="display" id="display" disabled="true" style="font-weight:bold" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">     <!-- 계산 결과창-->
+        <input type="text" name="result" id="result" disabled="true" style="font-weight:bold">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><button type="button" class="btn btn-danger" onclick="reset()">AC</button></td>
+      <td><button type="button" class="btn btn-primary" onclick="add('%')">%</button></td>
+      <td><button <button type="button" class="btn btn-primary" onclick="add('/')">/</button></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('7')">7</button></td>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('8')">8</button></td>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('9')">9</button></td>
+      <td><button type="button" class="btn btn-primary" onclick="add('*')">*</button></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('4')">4</button></td>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('5')">5</button></td>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('6')">6</button></td>
+      <td><button type="button" class="btn btn-primary" onclick="add('-')">-</button></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('1')">1</button></td>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('2')">2</button></td>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('3')">3</button></td>
+      <td><button type="button" class="btn btn-primary" onclick="add('+')">+</button></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button type="button" class="btn btn-outline-secondary" onclick="add('0')">0</button></td>
+      <td><button type="button" class="btn btn-outline-secondary" onclick="add('.')">.</button></td>
+      <td><button type="button" class="btn btn-success" onclick="calc()">=</button></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

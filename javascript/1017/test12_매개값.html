@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test11_매개값.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    'use strict';
+    
+    function fCheck1() {
+      console.log("매개변수가 없습니다.");
+    }
+
+    function fCheck2(su1) {
+      console.log("매개변수 1개 : ", su1);
+    }
+
+    function fCheck3(su1, su2) {
+      console.log("매개변수 2개 : ", su1, su2);
+      console.log("su1 + su2 :", (su1 + su2));
+    }
+
+    function fCheck4() {
+      let su = prompt("수를 입력하세요");
+      fCheck5(su);
+    }
+
+    function fCheck5(su) {
+      console.log("매개변수 1개 : ", su);
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>매개변수 연습</h2>
+  <form name="myfor">
+    <p>
+      <input type="button" value="호출1" onclick="fCheck1()" class="btn btn-success"/>
+      <input type="button" value="호출2" onclick="fCheck2(10)" class="btn btn-primary"/>
+      <input type="button" value="호출3" onclick="fCheck3(10,20)" class="btn btn-secondary"/>
+      <input type="button" value="호출4" onclick="fCheck4()" class="btn btn-info"/>
+    </p>
+  </form>
+</div>
+</body>
+</html>

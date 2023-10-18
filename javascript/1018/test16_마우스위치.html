@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test16_마우스위치.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    'use strict';
+    
+    function mClick(e) {
+      // alert("클릭 이벤트 발생");
+      let x = e.screenX;
+      let y = e.screenY;
+
+      let str = '';
+      str += '발생된 이벤트 : ' + e.type + '<br/>';
+      str += 'X 좌표 : ' + x + '<br/>';
+      str += `y 좌표 : ${y}`;
+
+      demo.innerHTML = str;
+
+      document.getElementById("demo").style.backgroundColor = '#fff';
+      document.getElementById("demo").style.color = '#000';
+    }
+
+    function mDblClick() {
+      document.getElementById("demo").style.backgroundColor = '#f00';
+      document.getElementById("demo").style.color = '#fff';
+    }
+
+    function mRClick() {
+      document.getElementById("demo").style.backgroundColor = '#ff0';
+      document.getElementById("demo").style.color = '#00f';
+    }
+
+    document.onclick = mClick;
+    document.ondblclick = mDblClick;
+    document.oncontextmenu = mRClick;
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>마우스 위치 감지하기</h2>
+  <p>마우스를 클릭하시면 현재 윈도우 좌표가 출력됩니다.</p>
+  <hr/>
+  <div id="demo"></div>
+</div>
+</body>
+</html>

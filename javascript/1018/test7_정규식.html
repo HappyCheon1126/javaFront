@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test7_정규식.html</title>
+  <script src="test7.js"></script>
+</head>
+<body>
+  <h2>정규식(Regular Expression)</h2>
+  <form name="myform">
+    <div>
+      문자열 : <!-- <textarea name="content" id="content" rows="3" cols="50"></textarea> -->
+      <p><input type="text" name="content" id="content" autofocus required /></p>
+      <p><input type="button" value="정규식체크" onclick="regexCheck()" /></p>
+    </div>
+  </form>
+  <hr/>
+  <pre>
+    형식 : /~~~~~/플러그인 , /[~~~~~]/플러그인                 자바 : ^[~~~~~]*$
+    플러그인 :
+      g(global) : 전체범위에서의 처리
+      m(multi line) : 여러줄에 걸쳐서 처리(textarea 태그)
+      s(single line) : 한줄에서의 처리(기본값으로 생략한다.)
+      i : 영문자인경우에 대/소문자의 구별을 하지 않는다.
+      u(unicode) : 유니코드에 대한 구별 처리할때 사용.
+
+      정규식을 실행하기위해서 사용되는 함수?
+        1. 사용자입력문자열.match(정규표현식 or 정규표현식변수) : 포함유무에 대한 비교시에 사용하면 편리함.
+        2. 정규표현식변수.test(사용자입력문자열) : 구체적인 문자(열)간의 비교 체크에 사용하면 편리함.
+  </pre>
+  <p><b>Front에서 서버로 값을 전송(Form태그 사용)할시는 사용자 값을 입력후 반드시 유효성 검사를 거쳐야 한다.</b></p>
+</body>
+</html>

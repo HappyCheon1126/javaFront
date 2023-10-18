@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test6_생성자함수.html</title>
+  <script>
+    'use strict';
+
+    const user1 = {name: '홍길동',age: 22}
+    const user2 = {name: '김말숙',age: 35}
+    const user3 = {name: '이기자',age: 19}
+
+    function fCheck1() {
+      console.log("user1 : ", user1);
+      console.log("user1.name :", user1.name);
+    }
+
+    function fCheck2(user) {
+      console.log("user :", user);
+    }
+
+    const user4 = new user("강감찬", 55);
+
+    function user(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+  </script>
+</head>
+<body>
+  <h2>생성자 함수 연습</h2>
+  <input type="button" value="실행1" onclick="fCheck1()" />
+  <input type="button" value="실행2" onclick="fCheck2(user1)" />
+  <input type="button" value="실행3" onclick="fCheck2(user2)" />
+  <input type="button" value="실행4" onclick="fCheck2(user3)" />
+  <input type="button" value="실행5" onclick="fCheck2(user4)" />
+</body>
+</html>
