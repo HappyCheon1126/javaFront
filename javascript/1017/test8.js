@@ -46,6 +46,7 @@ console.clear();
 
 // 수직으로 걸러내기 : filter
 arr2.filter(function(data, idx) {console.log(data, " : " , idx);});
+
 arr2.filter((data, idx) => console.log(data, " : " , idx));
 
 let res1 = arr2.filter((data, idx) => idx % 2 == 0);
@@ -63,30 +64,36 @@ console.log("res2 :", res2);
 
 let arr3 = [10, 8, 20, 15, 11, 17];
 console.log("arr3 :", arr3);
+arr3.forEach( (data,index) => console.log(data, index));
 
 // 오름차순정렬 : sort() ==> 문자형식으로 정렬...
 let res3 = arr3.sort();
 console.log("res3(문자형식) :", res3);
+res3.forEach((data,index) => console.log(index, data));
 
 // 오름차순정렬 : sort((a,b) => a-b) ==> 숫자형식으로 정렬...
 res3 = arr3.sort((a,b) => a-b);   // 예:  a가 3, b가 5면, a-b는 음수이기에 a가 b보다 작은값이다. 즉, 작은값이 앞에 있게 정렬된다 : 오름차순정렬
 console.log("res3(숫자형식오름차순) :", res3);
+res3.forEach( (data, index) => console.log(index, data));
 
 // 내림차순정렬 : sort((a,b) => b-a) ==> 숫자형식으로 정렬...
-console.log("res3(w숫자형식내림차순) :", res3);
+res3 = arr3.sort((a,b) => b-a);
+console.log("res3(숫자형식내림차순) :", res3);
+res3.forEach( (data, index) => console.log(index, data));
 
 arr3 = [10, 8, 20, 15, 11, 17];
 console.log("원본 : ", arr3);
 
 // 배열의 자료를 역순으로 출력 : reverse()
-let res4 = arr3.reverse();
+let res4 = arr3.reverse();  // 원본 배열의 값이 역순으로 바뀌게 된다.
 console.log("res4(역순) :", res4);
+res4.forEach( (data,index) => console.log(index, data));
 
-console.log("arr3 :", arr3);
+console.log("arr3 :", arr3); // 원본 배열의 값이 역순으로 바뀌게 된다.
 arr3.forEach((data,idx) => console.log(data, " : " , idx));
 //console.clear();
 
-// 최대/최소값
+// 최대/최소값 :   max(), min()
 let max = Math.max(10, 8, 20, 15, 11, 17);
 console.log("max :", max);
 let min = Math.min(10, 8, 20, 15, 11, 17);

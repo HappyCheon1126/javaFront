@@ -27,17 +27,27 @@
     
     function fCheck() {
       // 정규식 정의
-      let regMid = /^[a-zA-Z0-9_]{4,20}$/;
-      let regPwd = /(?=.*[a-zA-Z0-9])(?=.*[~!@#$%^&*()_+\[\]{}?]).{4,20}/;
-      //let regPwd = //;
-
+      let regMid = /^[a-zA-Z0-9_]{4,20}$/;     // 영문자,숫자,_ 포함으로 4~20 자까지
+      let regPwd = /(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()_+\[\]{}?]).{4,20}/;   // 영문자,숫자,특수글자(~!@#$%^&*()_+,.?><[]{})가 각각 1자이상 포함으로 4~20 자까지
+      let regNickName = /^[가-힣]+$/;   // 한글만 사용가능
+      //let regName = /^[가-힣a-zA-Z]+$/; // 한글,영문만 사용가능
+      let regName1 = /^[가-힣]+$/; // 한글,영문만 사용가능(혼용불가)
+      let regName2 = /^[a-zA-Z]+$/; // 한글,영문만 사용가능(혼용불가)
+      let regEmail =/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;  // 이메일 형식에 맞도록
+      let regURL = /^(https?:\/\/)?([a-zA-Z\d\.-]+)\.([a-zA-Z\.]{2,6})([\/\w\.-]*)*\/?$/;
+      let regTel = /\d{2,3}-\d{3,4}-\d{4}$/g;
+      let regJumin = /\d{6}-[1-4]{1}$/;   // {1}일때는 $는 생략가능..
 
 
       // form에 입력된값들을 변수에 담기
       let mid = document.getElementById("mid").value.trim();
       let pwd = document.getElementById("pwd").value.trim();
-
-
+      let nickName = myform.nickName.value;
+      let name = myform.name.value;
+      let email = myform.email.value;
+      let homePage = myform.homePage.value;
+      let tel = myform.tel.value;
+      let jumin = myform.jumin.value;
 
       // 유효성 검사
       if(!regMid.test(mid)) {
@@ -48,6 +58,36 @@
       else if(!regPwd.test(pwd)) {
         alert("비밀번호는 문자나 숫자와 특수문자가 각각 1개 이상의 조합으로 4~20자리로 작성해 주세요");
         document.getElementById("pwd").focus();
+        return false;
+      }
+      else if(!regNickName.test(nickName)) {
+        alert("닉네임은 한글만 사용가능합니다.");
+        myform.nickName.focus();
+        return false;
+      }
+      else if(!regName1.test(name) && !regName2.test(name)) {
+        alert("성명은 한글과 영문대소문자만 사용가능합니다.");
+        myform.name.focus();
+        return false;
+      }
+      else if(!regEmail.test(email)) {
+        alert("이메일 형식에 맞지않습니다.");
+        myform.email.focus();
+        return false;
+      }
+      else if(!regURL.test(homePage)) {
+        alert("작성하신 홈페이지 주소가 URL 형식에 맞지않습니다.");
+        myform.homePage.focus();
+        return false;
+      }
+      else if(!regTel.test(tel)) {
+        alert("전화번호 형식에 맞지않습니다.(000-0000-0000)");
+        myform.tel.focus();
+        return false;
+      }
+      else if(!regJumin.test(jumin)) {
+        alert("주민번호 형식에 맞지않습니다.(000000-0)");
+        myform.jumin.focus();
         return false;
       }
 
@@ -78,7 +118,7 @@
     </div>
     <div class="form-group">
       <label for="pwd">비밀번호</label>
-      <input type="password" name="pwd" id="pwd" value="1234" placeholder="비밀번호를 입력하세요" class="form-control" required />
+      <input type="password" name="pwd" id="pwd" value="1234a!" placeholder="비밀번호를 입력하세요" class="form-control" required />
     </div>
     <div class="form-group">
       <label for="nickName">닉네임</label>

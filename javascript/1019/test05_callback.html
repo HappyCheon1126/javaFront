@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test05_callback.html</title>
+  <script>
+    'use strict';
+
+    // 동기식 콜백함수
+    function printProcess(print) {
+      console.log("동기식출력");
+      console.log(print);
+      print();
+    }
+
+    // 비동기식 콜백함수
+    function printDelay(print, time) {
+      setTimeout(print, time);
+    }
+
+
+    console.log("출발 1");  // 동기식
+    // setTimeout(function() {
+    //   console.log("출발 2 - 서버에서 자료가져와서 출력하기");
+    // }, 1000);
+    setTimeout(() => console.log("출발 2 - 서버에서 자료가져와서 출력하기"), 1000); // 비동기식
+    console.log("출발 3");  // 동기식
+
+    printProcess(() => console.log("안녕하세요1"));
+    printDelay( () => console.log("비동기 콜백 처리"), 2000);
+    printProcess(() => console.log("안녕하세요2"));
+  </script>
+</head>
+<body>
+  <h2>동기식(Synchronous Callback) / 비동기식(Asynchronous Callback)</h2>
+</body>
+</html>

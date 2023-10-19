@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test06_동적폼.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    'use strict';
+
+    let newText = '';
+    let idx = 0;
+
+    // 1. 1개 입력박스를 만든다.
+    // function inputBox() {
+    //   let newText = '<input type="text" name="product" id="product" />';
+    //   demo.innerHTML = newText;
+    // }
+
+    // 2. 버튼을 클릭할때마다 입력박스를 추가한다.
+    // function inputBox() {
+    //   newText += '<input type="text" name="product" id="product" class="mb-2" /><br/>';
+    //   demo.innerHTML = newText;
+    // }
+
+    // 3. 버튼을 클릭할때마다 입력박스를 추가한다.(삭제버튼 추가)
+    function inputBox() {
+      newText += '<input type="text" name="product" id="product" class="mb-2 mr-3" />';
+      newText += '<input type="button" value="삭제" onclick="" class="btn-sm btn-danger" /><br/>';
+      demo.innerHTML = newText;
+    }
+
+    // 4. 클릭시마다 입력박스에 고유번호를 설정한다.
+    function inputBox() {
+      idx++;
+      newText += idx + '.<input type="text" name="product" id="product'+idx+'" class="mb-2 mr-3" />';
+      newText += '<input type="button" value="'+idx+'.삭제" onclick="deleteBox('+idx+')" class="btn-sm btn-danger" /><br/>';
+      demo.innerHTML = newText;
+    }
+
+    // 5. 입력박스와 버튼을 하나의 그룹으로 설정해준다.
+    // function inputBox() {
+    //   idx++;
+    //   newText += '<div id="productBox'+idx+'">';
+    //   newText += idx + '.<input type="text" name="product" id="product'+idx+'" class="mb-2 mr-3" />';
+    //   newText += '<input type="button" value="'+idx+'.삭제" onclick="deleteBox('+idx+')" class="btn-sm btn-danger" /><br/>';
+    //   newText += '</div>';
+    //   demo.innerHTML = newText;
+    // }
+    function inputBox() {
+      newText = '';
+      idx++;
+      newText += '<div id="productBox'+idx+'">';
+      newText += idx + '.<input type="text" name="product" id="product'+idx+'" class="mb-2 mr-3" />';
+      newText += '<input type="button" value="'+idx+'.삭제" onclick="deleteBox('+idx+')" class="btn-sm btn-danger" /><br/>';
+      newText += '</div>';
+      demo.innerHTML += newText;
+    }
+
+    // 입력상자 삭제하기
+    function deleteBox(idx) {
+      //alert(idx);
+      let productBox = "productBox" + idx;
+      let item = document.getElementById(productBox);
+      //item.parentNode.removeChild(item);
+      item.remove(item);
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>입력창 추가(동적폼)</h2>
+  <form name="myform">
+    <p>
+      <input type="button" value="입력창추가" onclick="inputBox()" class="btn btn-success" />
+      <input type="button" value="입력창모두제거" onclick="location.reload();" class="btn btn-warning" />
+    </p>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+</div>
+</body>
+</html>

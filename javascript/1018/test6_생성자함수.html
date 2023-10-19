@@ -7,21 +7,26 @@
   <script>
     'use strict';
 
+    // 자바스크립트 객체를 직접 만들어서 사용하는 방법(초기값('키'와 '값')을 설정하면서 user객체를 만들고 있다.)
     const user1 = {name: '홍길동',age: 22}
     const user2 = {name: '김말숙',age: 35}
     const user3 = {name: '이기자',age: 19}
 
     function fCheck1() {
       console.log("user1 : ", user1);
-      console.log("user1.name :", user1.name);
+      console.log("user1.name :", user1.name, " , age :", user1.age);
     }
 
+    // 생성자 함수
     function fCheck2(user) {
       console.log("user :", user);
+      console.log("name :", user.name, " , age :", user.age);
     }
 
-    const user4 = new user("강감찬", 55);
+    // 21번라인에서 user4값이 넘어오면 22번에서 user4를 호출하면서 27번이 실행되면서 30번행의 생성자 함수를 만들게 된다.
+    const user4 = new user("강감찬", 55); // 객체 생성시에 생성자 함수를 호출하면서 값에대한 처리를 할 수 있다.
 
+    // 생성자 함수
     function user(name, age) {
       this.name = name;
       this.age = age;
@@ -30,8 +35,8 @@
 </head>
 <body>
   <h2>생성자 함수 연습</h2>
-  <input type="button" value="실행1" onclick="fCheck1()" />
-  <input type="button" value="실행2" onclick="fCheck2(user1)" />
+  <input type="button" value="실행1" onclick="fCheck1()" />       <!-- 일반 함수를 통해서 객체의 값을 출력한다. -->
+  <input type="button" value="실행2" onclick="fCheck2(user1)" />  <!-- 함수에 객체 이름을 넣어서 바로 호출하여 객체안의 값을 처리할 수 있다.-->
   <input type="button" value="실행3" onclick="fCheck2(user2)" />
   <input type="button" value="실행4" onclick="fCheck2(user3)" />
   <input type="button" value="실행5" onclick="fCheck2(user4)" />

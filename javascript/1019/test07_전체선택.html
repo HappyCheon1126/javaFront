@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test07_전체선택.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    'use strict';
+    
+    // 체크박스 상태
+    function foodCheck(e) {
+      if(e.checked) demo.innerHTML = "<font color='red'>"+e.value+"<b></b></font> 선택";
+      else  demo.innerHTML = "<font color='blue'><b>"+e.value+"</b></font> 취소";
+    }
+
+    // 전체선택
+    function allCheck() {
+      for(let i=0; i<myform.food.length; i++) {
+        myform.food[i].checked = true;
+      }
+    }
+
+    // 전체 해제
+    function allReset() {
+      for(let i=0; i<myform.food.length; i++) {
+        myform.food[i].checked = false;
+      }
+    }
+
+    // 선택 반전1
+    function reverseCheck() {
+      for(let i=0; i<myform.food.length; i++) {
+        if(myform.food[i].checked) myform.food[i].checked = false;
+        else myform.food[i].checked = true;
+      }
+    }
+
+    // 선택 반전2
+    function reverseCheck2() {
+      for(let i=0; i<myform.food.length; i++) {
+        myform.food[i].checked = !myform.food[i].checked;
+      }
+    }
+
+    // 선택된 항목을 출력하기
+    function outCheck() {
+      let str = '';
+
+      for(let i=0; i<myform.food.length; i++) {
+        if(myform.food[i].checked) str += myform.food[i].value + "/";
+      }
+
+      demo.innerHTML = "<font color='orange'><b>"+str+"</b></font>";
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>좋아하는 음식은?</h2>
+  <form name="myform">
+    <p>
+      <input type="checkbox" name="food" value="탕수육" onclick="foodCheck(this)"  class="ml-2"/> 탕수육
+      <input type="checkbox" name="food" value="짜장면" onclick="foodCheck(this)"  class="ml-2"/> 짜장면
+      <input type="checkbox" name="food" value="제육덮밥" onclick="foodCheck(this)"  class="ml-2"/> 제육덮밥
+      <input type="checkbox" name="food" value="돈까스" onclick="foodCheck(this)"  class="ml-2"/> 돈까스
+      <input type="checkbox" name="food" value="유부우동" onclick="foodCheck(this)"  class="ml-2"/> 유부우동
+      <input type="checkbox" name="food" value="참치김밥" onclick="foodCheck(this)"  class="ml-2"/> 참치김밥
+    </p>
+    <hr/>
+    <p>
+      <input type="button" value="전체선택" onclick="allCheck()" class="btn-sm btn-success" />
+      <input type="button" value="전체취소" onclick="allReset()" class="btn-sm btn-success" />
+      <input type="button" value="선택반전" onclick="reverseCheck()" class="btn-sm btn-success" />
+      <input type="button" value="선택반전2" onclick="reverseCheck2()" class="btn-sm btn-success" />
+      <input type="button" value="선택값출력" onclick="outCheck()" class="btn-sm btn-success" />
+    </p>
+    <hr/>
+    <div id="demo"></div>
+  </form>
+</div>
+</body>
+</html>
