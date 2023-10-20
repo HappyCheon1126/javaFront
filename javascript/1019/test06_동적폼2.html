@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test06_동적폼2.html(가격계산출력)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    // 가격계산(개별가격*수량)
+    function priceCalc() {
+      let price = myform.price.value * myform.ea.value;
+      price = numberWithCommas(price);
+      document.getElementById("demo1").innerHTML = price + "원";
+    }
+    
+    // VAT 계산하기
+    function vatCalc() {
+      let price = myform.price.value * myform.ea.value;
+      let vat = (price * 1.1) - price;
+      vat = numberWithCommas(vat);
+      document.getElementById("demo2").innerHTML = vat + "원";
+    }
+    
+    // 선택한 상품계산하기(가격 + vat)
+    function totalCalc() {
+      let totalPrice = totalProduct();
+      totalPrice = numberWithCommas(totalPrice);
+      document.getElementById("demo3").innerHTML = totalPrice + "원";
+    }
+    
+    function totalProduct() {
+      let price = myform.price.value * myform.ea.value;
+      let vat = (price * 1.1) - price;
+      let totalPrice = price + vat;
+      return totalPrice;
+    }
+
+    // 구매한 상품을 장바구니에 담아놓기
+    let totalProducePrice = 0;
+    function cartSend() {
+      // 상품 총 가격 계산하기
+      totalProducePrice += totalProduct();
+
+      // 카트에 담기
+      let demo = "<p>상품명 : " + myform.product.value + " : <b>장바구니 상품 총가격 : "+numberWithCommas(totalProducePrice)+"원</b><br/>";
+      demo += demoProduct.innerText + "</p>";
+      demoCart.innerHTML += demo;
+
+    }
+    
+    // 쉼표출력
+    function numberWithCommas(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>상품 가격 계산</h2>
+  <br/>
+  <form name="myform">
+    <div class="form-group p-2">
+      <label for="product">상품명 :</label>
+      <input type="text" name="product" id="product" value="잠바" autofocus class="form-control"/>
+    </div>
+    <div class="form-group p-2">
+      <label for="price">사이즈(단가) :</label>
+      <select name="price" id="price" class="form-control">
+        <option value="5000" selected>1. S Size(5,000)</option>
+        <option value="10000">2. M Size(10,000)</option>
+        <option value="15000">3. L Size(15,000)</option>
+        <option value="20000">4. XL Size(20,000)</option>
+        <option value="25000">5. XXL Size(25,000)</option>
+      </select>
+      <div class="m-2"></div>
+      <label for="ea">수량(개)</label>
+      <input type="number" name="ea" id="ea" value="1" min="1" class="form-control"/>
+    </div>
+    <div class="row m-2">
+      <input type="button" value="가격" onclick="priceCalc()" class="btn btn-success mr-2 col"/>
+      <input type="button" value="VAT" onclick="vatCalc()" class="btn btn-primary mr-2 col"/>
+      <input type="button" value="총가격(price+vat)" onclick="totalCalc()" class="btn btn-info col"/> 
+      <span class="col"></span>
+      <input type="button" value="장바구니" onclick="cartSend()" class="btn btn-warning mr-2 col"/> 
+      <input type="button" value="장바구니비우기" onclick="location.reload()" class="btn btn-danger col"/> 
+    </div>
+  </form>
+  <hr/>
+  <div class="border m-3 p-3" id="demoProduct">
+    <p class="row">
+      <span class="col ml-4">☞ 가격(단가*수량) : </span>
+      <span id="demo1" class="col"></span>
+    </p>
+    <p class="row">
+      <span class="col ml-4">☞ VAT('가격'의 10%) : </span>
+      <span id="demo2" class="col"></span>
+    </p>
+    <p class="row">
+      <span class="col ml-4">☞ 총판매가격(VAT포함) : </span>
+      <span id="demo3" class="col"></span>
+    </p>
+  </div>
+  <hr/>
+  <div id="demoCart"></div>
+</div>
+</body>
+</html>

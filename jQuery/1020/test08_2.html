@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>
+    'use strict';
+    
+    $(() => {
+      $('div span').css('color','orange');
+
+      $('div span:first-child').css('color','red');
+      $('div span:last-child').css('color','blue');
+      $('div span:nth-child(2)').css('color','yellow');
+      $('div span:only-child').css('textDecoration','underline'); // 자식태그가 1개인것만 적용
+      $('div span:only-of-type').css('fontSize','25pt'); // 자식태그가 1개인것만 적용
+      // $('div span:nth-child(2n-1)').css('backgroundColor','pink');
+      // $('div span:nth-child(3n)').css('backgroundColor','pink');
+      // $('div span:nth-child(odd)').css('backgroundColor','pink');
+      $('div span:nth-child(even)').css('backgroundColor','pink');
+
+    });
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>샘플 데이터</h2>
+  <div>
+    <span>1.짜장면</span>
+    <span>2.짬봉</span>
+    <span>3.탕수육</span>
+    <span>4.볶음밥</span>
+    <span>5.잡채밥</span>
+  </div>
+  <div>
+    <span>11.사과</span>
+    <span>12.배</span>
+    <span>13.바나나</span>
+    <span>14.자두</span>
+    <span>15.포도</span>
+  </div>
+  <div>
+    <span>21.컴퓨터</span>
+  </div>
+  <div>
+    <span>31.서울</span>
+    <span>32.부산</span>
+    <span>33.청주</span>
+  </div>
+</div>
+</body>
+</html>
