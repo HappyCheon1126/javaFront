@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test8_2.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    .bgColor {
+      background-color: #ff0;
+    }
+  </style>
+  <script>
+    'use strict';
+
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth();
+    let date = today.getDate();
+
+    let clickSw = 0;
+    let startNo;
+    let endNo;
+    let ymd;
+    
+    $(function() {
+      
+      ymd = `${year}-${month}-${date}`;
+      $('#demo').html("오늘 날짜는 " + ymd);
+      
+      
+      $('td').on('click', function() {
+        let cellText = eval($(this).text());
+        if(cellText < date) alert("오늘 이전일은 선택하실수 없습니다.");
+        else {
+          if(clickSw == 0) {
+            removeDate();
+            startNo = cellText;
+            clickSw = 1;
+            $(this).addClass('bgColor');
+          }
+          else {
+            if(cellText < startNo) {
+              alert("두번째 날짜를 다시 선택해 주세요.");
+            }
+            else {
+              endNo = cellText;
+              selectDate(startNo, endNo);
+              clickSw = 0;
+            }
+          }
+        }
+      });
+    });
+    
+    function selectDate(startNo, endNo) {
+      let reservation = `오늘날짜 : ${ymd}<br/>예약하신 날짜는 : ${startNo}/`;
+      for(let i=startNo+1; i<=endNo; i++) {
+        let temp = '#td' + i;
+        $(temp).addClass('bgColor');
+        reservation += i + "/";
+      }
+      reservation = reservation.substring(0,reservation.length-1) + ' 입니다.';
+      $('#demo').html(reservation);
+    }
+
+    function removeDate() {
+      for(let i=1; i<=30; i++) {
+        let temp = '#td' + i;
+        if($(temp).hasClass('bgColor') == true) $(temp).removeClass('bgColor');
+      }
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>표의 날짜를 클릭하시면 선택/취소 됩니다.</h2>
+  <p>오늘 날짜 이전은 선택하실 수 없습니다.</p>
+  <table class="table table-bordered text-center">
+    <tr>
+      <td class="tdCell" id="td1">1</td>
+      <td class="tdCell" id="td2">2</td>
+      <td class="tdCell" id="td3">3</td>
+      <td class="tdCell" id="td4">4</td>
+      <td class="tdCell" id="td5">5</td>
+    </tr>
+    <tr>
+      <td class="tdCell" id="td6">6</td>
+      <td class="tdCell" id="td7">7</td>
+      <td class="tdCell" id="td8">8</td>
+      <td class="tdCell" id="td9">9</td>
+      <td class="tdCell" id="td10">10</td>
+    </tr>
+    <tr>
+      <td class="tdCell" id="td11">11</td>
+      <td class="tdCell" id="td12">12</td>
+      <td class="tdCell" id="td13">13</td>
+      <td class="tdCell" id="td14">14</td>
+      <td class="tdCell" id="td15">15</td>
+    </tr>
+    <tr>
+      <td class="tdCell" id="td16">16</td>
+      <td class="tdCell" id="td17">17</td>
+      <td class="tdCell" id="td18">18</td>
+      <td class="tdCell" id="td19">19</td>
+      <td class="tdCell" id="td20">20</td>
+    </tr>
+    <tr>
+      <td class="tdCell" id="td21">21</td>
+      <td class="tdCell" id="td22">22</td>
+      <td class="tdCell" id="td23">23</td>
+      <td class="tdCell" id="td24">24</td>
+      <td class="tdCell" id="td25">25</td>
+    </tr>
+    <tr>
+      <td class="tdCell" id="td26">26</td>
+      <td class="tdCell" id="td27">27</td>
+      <td class="tdCell" id="td28">28</td>
+      <td class="tdCell" id="td29">29</td>
+      <td class="tdCell" id="td30">30</td>
+    </tr>
+  </table>
+  <hr/>
+  <div id="demo"></div>
+</div>
+</body>
+</html>

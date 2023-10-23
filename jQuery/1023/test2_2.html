@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    #intro {
+      width: 300px;
+      height: 250px;
+      border: 1px solid gray;
+      overflow: auto;
+      padding: 5px;
+    }
+  </style>
+  <script>
+    'use strict';
+    let chai = 0;
+    
+    let boxHeight,scrollHeight,scrollTop;
+    
+    $(function() {
+      boxHeight = $('#intro').height();
+      scrollHeight = $('#intro').prop('scrollHeight');
+      scrollTop = $('#intro').scrollTop();
+
+      chai = scrollHeight - boxHeight;
+
+      console.log("박스의 높이 :", boxHeight);
+      console.log("스크롤바의 높이 :", scrollHeight);
+      console.log("스크롤바의 시작위치 :", scrollTop);
+      console.log("차이 : ", chai);
+
+      // $('#btnEnd').on('click', function() {
+      //   $('#intro').scrollTop(chai);
+      // });
+
+      // $('#btnTop').click(function() {
+      //   $('#intro').scrollTop(0);
+      // });
+    });
+
+    function scrollBottomCheck() {
+      $('#intro').scrollTop(chai);
+    }
+
+    function scrollTopCheck() {
+      $('#intro').scrollTop(0);
+    }
+    
+    let current = 0;
+    function scrollNextCheck() {
+      if(current < scrollHeight-boxHeight) {
+        current += boxHeight + 10;
+        console.log(current);
+        $('#intro').scrollTop(current);
+      }
+    }
+    
+    function scrollPreCheck() {
+      if(current > 0) {
+        current -= boxHeight + 10;
+        console.log(current);
+        $('#intro').scrollTop(current);
+      }
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <div>
+    <h4 onclick="alert('aaa')">마우스클릭...</h4>
+  </div>
+  <div>
+    <input type="button" value="영역의 끝으로" id="btnEnd" onclick="scrollBottomCheck()" class="btn btn-outline-success mb-2"/>
+    <input type="button" value="영역의 처음으로" id="btnTop" onclick="scrollTopCheck()" class="btn btn-outline-primary mb-2"/>
+  </div>
+  <div>
+    <input type="button" value="다음페이지" onclick="scrollNextCheck()" class="btn btn-outline-success"/>
+    <input type="button" value="이전페이지" onclick="scrollPreCheck()" class="btn btn-outline-primary"/>
+  </div>
+  <hr/>
+  <h2>자기소개서</h2>
+  <div id="intro">
+    <div>1.자기소개서를 작성했습니다.</div>
+    <div>2.자기소개서를 작성했습니다.</div>
+    <div>3.자기소개서를 작성했습니다.</div>
+    <div>4.자기소개서를 작성했습니다.</div>
+    <div>5.자기소개서를 작성했습니다.</div>
+    <div>6.자기소개서를 작성했습니다.</div>
+    <div>7.자기소개서를 작성했습니다.</div>
+    <div>8.자기소개서를 작성했습니다.</div>
+    <div>9.자기소개서를 작성했습니다.</div>
+    <div>10.자기소개서를 작성했습니다.</div>
+    <div>11.자기소개서를 작성했습니다.</div>
+    <div>12.자기소개서를 작성했습니다.</div>
+    <div>13.자기소개서를 작성했습니다.</div>
+    <div>14.자기소개서를 작성했습니다.</div>
+    <div>15.자기소개서를 작성했습니다.</div>
+    <div>16.자기소개서를 작성했습니다.</div>
+    <div>17.자기소개서를 작성했습니다.</div>
+    <div>18.자기소개서를 작성했습니다.</div>
+    <div>19.자기소개서를 작성했습니다.</div>
+    <div>20.자기소개서를 작성했습니다.</div>
+    <div>21.자기소개서를 작성했습니다.</div>
+    <div>22.자기소개서를 작성했습니다.</div>
+    <div>23.자기소개서를 작성했습니다.</div>
+    <div>24.자기소개서를 작성했습니다.</div>
+    <div>25.자기소개서를 작성했습니다.</div>
+    <div>26.자기소개서를 작성했습니다.</div>
+    <div>27.자기소개서를 작성했습니다.</div>
+    <div>28.자기소개서를 작성했습니다.</div>
+    <div>29.자기소개서를 작성했습니다.</div>
+    <div>30.자기소개서를 작성했습니다.</div>
+    <div>21.자기소개서를 작성했습니다.</div>
+    <div>32.자기소개서를 작성했습니다.</div>
+    <div>33.자기소개서를 작성했습니다.</div>
+    <div>34.자기소개서를 작성했습니다.</div>
+    <div>35.자기소개서를 작성했습니다.</div>
+    <div>36.자기소개서를 작성했습니다.</div>
+    <div>27.자기소개서를 작성했습니다.</div>
+    <div>38.자기소개서를 작성했습니다.</div>
+    <div>39.자기소개서를 작성했습니다.</div>
+    <div>40.자기소개서를 작성했습니다.</div>
+    <div>41.자기소개서를 작성했습니다.</div>
+    <div>42.자기소개서를 작성했습니다.</div>
+    <div>43.자기소개서를 작성했습니다.</div>
+    <div>44.자기소개서를 작성했습니다.</div>
+    <div>45.자기소개서를 작성했습니다.</div>
+    <div>46.자기소개서를 작성했습니다.</div>
+    <div>47.자기소개서를 작성했습니다.</div>
+    <div>48.자기소개서를 작성했습니다.</div>
+    <div>49.자기소개서를 작성했습니다.</div>
+    <div>50.자기소개서를 작성했습니다.</div>
+  </div>
+</div>
+</body>
+</html>

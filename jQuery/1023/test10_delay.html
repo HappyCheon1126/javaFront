@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .box {
+      width: 90px;
+      height: 90px;
+      display:none;
+      background-color: red;
+    }
+  </style>
+  <script>
+    'use strict';
+    $(function() {
+      $('#startBtn').click(function() {
+        $('#box1').fadeIn().delay(2000,function() {
+          alert("안녕!!");
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <button type="button" id="startBtn" >출발</button>
+    <button type="button" onclick="location.reload()" >다시시작</button>
+  </div>
+  <div id="box1" class="box"></div>  
+</body>
+</html>
