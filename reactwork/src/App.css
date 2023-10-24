@@ -1,3 +1,7 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
 body {
   margin: 0px;
   padding: 0px;
@@ -11,4 +15,35 @@ body {
 }
 .title {
   text-align: center;
+  background-color: red;
+}
+
+.header {
+  text-align: center;
+  background-color: rgb(197, 157, 235);
+  height: 100px;
+  line-height: 100px;
+}
+.home, .comp1, .comp2, .comp3 {
+  text-align: center;
+  background-color: #fff;
+  height: 600px;
+  line-height: 50px;
+}
+
+.home {
+  line-height: 100px;
+}
+
+.footer {
+  text-align: center;
+  background-color: rgb(254, 255, 182);
+  height: 100px;
+  line-height: 100px;
+}
+
+a {
+  text-decoration: none;
+  margin: 5px;
+  color: blue;
 }
